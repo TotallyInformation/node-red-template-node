@@ -1,0 +1,40 @@
+    <p>Help for this Node - this para will be used in the palette.</p>
+    <p>
+        Replace this with actual help for the node you are creating.
+    </p>
+
+    <h3>Input msg</h3>
+    <dl class="message-properties">
+        <dt class="optional">payload <span class="property-type">(string | buffer)</span></dt>
+        <dd> Optionally, the payload of the message to send to all connected client browser tabs. </dd>
+        <dt class="optional">topic <span class="property-type">(string)</span></dt>
+        <dd> Optionally, the MQTT topic to use. Takes preference over the topic defined in settings.</dd>
+
+    </dl>
+
+    <h3>Output msgs</h3>
+    <ol class="node-ports">
+        <li>Standard output msg
+            <dl class="message-properties">
+                <dt>payload <span class="property-type">(string | buffer)</span></dt>
+                <dd>
+                    A copy of any inbound payload unless altered by the front-end page.
+                </dd>
+                <dt>topic <span class="property-type">(string)</span></dt>
+                <dd>
+                    A copy of any inbound topic if present. Otherwise, the topic from the node's settings. Could be changed by the front-end
+                    page but it really isn't recommended.
+                </dd>
+
+            </dl>
+        </li>
+
+    <h3>Node Settings</h3>
+    <dl class="message-properties">
+        <dt>Name <span class="property-type">(string) node-input-name</span></dt>
+        <dd>A short description shown in the admin interface</dd>
+        <dt>Topic <span class="property-type">(string) node-input-topic</span></dt>
+        <dd>A topic name to use if the incoming msg does not contain one.</dd>
+
+    </dl>
+

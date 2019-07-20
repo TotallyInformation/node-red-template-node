@@ -1,0 +1,67 @@
+{
+  "name": "node-red-template-node",
+  "version": "0.0.1",
+  "description": "A custom node Template package for Node-RED.",
+  "keywords": [
+    "node-red"
+  ],
+  "scripts": {
+    "build": "node ./bin/mergehtml",
+    "watchbuild": "node ./bin/watchhtml",
+    "prepush": "npm run build",
+    "push": "git push origin",
+    "pull": "git pull origin",
+    "presync": "npm run pull",
+    "sync": "npm run push",
+    "prepublishOnly": "npm run build",
+    "listbin": "ls ./node_modules/bin",
+    "npmtags": "npm dist-tag ls node-red-template-node",
+    "npmtagnext": "npm dist-tag add node-red-template-node@$npm_package_version next",
+    "gittags": "git tag",
+    "gittag": "git tag -a v$npm_package_version",
+    "gitpushtags": "git push origin --tags"
+  },
+  "homepage": "https://github.com/TotallyInformation/node-red-template-node",
+  "bugs": "https://github.com/TotallyInformation/node-red-template-node/issues",
+  "author": {
+    "name": "Julian Knight",
+    "url": "https://github.com/TotallyInformation/node-red-template-node"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TotallyInformation/node-red-template-node.git"
+  },
+  "node-red": {
+    "version": ">=0.20.5",
+    "nodes": {
+      "uibuilder": "nodes/node.js"
+    },
+    "notyetnodes": {}
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "*",
+    "@types/node-red": "*",
+    "replace-in-file": "^3.4.4"
+  },
+  "engines": {
+    "node": ">=8.16"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "maintained node versions",
+    "last 2 versions",
+    "not dead",
+    "not ie < 11"
+  ],
+  "directories": {
+    "bin": "./bin",
+    "example": "./nodes/examples"
+  },
+  "main": "./nodes/node.js",
+  "bin": {
+    "mergehtml": "./bin/mergehtml.js",
+    "watchhtml": "./bin/watchhtml.js"
+  }
+}
